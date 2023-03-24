@@ -1,0 +1,233 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+  border-radius: 50%;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+body{
+  --color-darkgrey: #1f1e1e;
+  --color-white: #ffffff;
+  --font: "Red_Hat_Mono", monospace;
+  font-family: "Red_Hat_Mono", monospace;
+  font-weight: 400;
+  font-style: normal;
+  font-size: calc(1rem + 0.4vw);
+  line-height: 3ch;
+  color: var(--color-white);
+  background-color: var(--color-darkgrey);
+} 
+
+a{text-decoration: none;}
+
+.left{
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding-left: 1%;
+}
+
+.right{
+  display: flex;
+  justify-content:flex-end;
+  align-items: flex-start;
+}
+
+.rightSpace{
+  display: flex;
+  justify-content:flex-end;
+  align-items: flex-end;
+  
+}
+
+.middle{
+  display: flex;
+  justify-content:center;
+}
+
+.bigger{
+  font-size: larger;
+}
+
+.space{
+  display: flex;
+  justify-content:space-around;
+}
+
+nav{
+  background-color: #282c34;
+  padding: 25px;
+}
+
+.round{
+  border-radius: 50px;
+}
+
+.round123{
+  border-radius: 50px;
+  height: 35%;
+  margin-left: 2%;
+  
+}
+
+button{
+  color: #101315;
+  background-color: #006ec8;
+  font-size: large;
+}
+
+.logoNav{
+  display: flex;
+  justify-content:space-between;
+}
+
+.indexBtn{
+  --out-color: #282c34;
+  border-radius: 50px;
+  width: 150px;
+  height: 150px;
+  border: none;
+  background: linear-gradient(10deg,#00447b, #008cff);
+}
+
+.devTeamBtn{
+  background: linear-gradient(10deg,#00447b, #008cff);
+  width: 150px;
+  height: 75px;
+  border: none;
+  border-radius: 50px;
+}
+
+.btngreen{
+  --out-color: #282c34;
+  border-radius: 50px;
+  width: 150px;
+  height: 150px;
+  border: none;
+  background: linear-gradient(10deg,#007b3b, #04cc3d);
+}
+
+.btngreenDev{
+  --out-color: #282c34;
+  border-radius: 50px;
+  width: 150px;
+  height: 75px;
+  border: none;
+  background: linear-gradient(10deg,#007b3b, #04cc3d);
+}
+
+.grid {
+  display: grid;
+  padding: 1%;
+  grid-template-columns: auto auto auto;
+  padding-left: 1%;
+  padding-right: 1%;
+}
+
+.grid-around-space{
+  padding: 1%;
+}
+
+.niceBlue{
+  color: #0086f5;
+}
+
+.blue{
+  color: #0051ff;
+}
+
+.overflow{
+  overflow-y: hidden;
+  overflow-x: hidden;
+}
+
+.red{
+  color: #ca0000;
+}
+
+.text-orange{
+    color: #f39e0c;
+}
+
+.text-light-blue{
+  color: #00a6ff;
+}
+
+
+.text-yellow{
+  color: #f1dd01;
+}
+
+.link-dark-green {
+  color:  #277e08;
+  text-decoration: none;
+}
+
+.link-dark-green:hover {
+  color: #0f50e9;
+  text-decoration: none;
+}
+
+.text-dark-green{
+  color: #277e08;
+}
+
+header{
+  font-weight: 700;
+}
+
+.text-green{
+ color: #52cf32;
+}
+
+
+.text-grey{
+  color: #6b6969e1;
+}
+
+.link-blue{
+  color: #0f50e9;
+  text-decoration: none;
+}
+
+.link-blue:hover{
+  color: var(--color-darkgrey);
+  background-color: #0f50e9;
+}
+
+button:hover{
+  cursor: pointer;
+}
