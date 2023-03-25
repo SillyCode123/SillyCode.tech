@@ -5,14 +5,15 @@ const app = express();
 
 const router = express.Router();
 
-//routes
-router.get('/', (req, res) => {
-  res.sendFile('index.html');
-  res.end();
-});
-
 
 //ist wichtig
 app.use("/.netlify/functions/api", router);
+
+//routes
+router.get('/', (req, res) => {
+  res.sendFile("index.html")
+  res.end();
+});
+
 
 module.exports.handler = serverless(app);
