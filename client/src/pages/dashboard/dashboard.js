@@ -7,6 +7,9 @@ var token_type = "empty";
 var access_token = "empty";
 var buttonText = "Login"; 
 
+//api
+var api = "https://api.sillycode.tech/.netlify/functions/api";
+
 function Dashboard() {
 
     const [refresh, setRefresh] = React.useState(0);
