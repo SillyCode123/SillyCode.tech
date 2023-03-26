@@ -28,7 +28,7 @@ app.use((req, res, next) => {
 //express err
 app.use((err, req, res, next) => {
   console.error(err.stack)
-  res.status(500).send(indexHtml)
+  res.status(500).send(indexHtml);
 })
 
 
