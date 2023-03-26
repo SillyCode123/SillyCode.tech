@@ -61,9 +61,9 @@ router.post("/check/cookie",(req,res) => {
           if (err) res.write("couldn't create cookie because " + err);
         });
   
-        con.query("SELECT EXISTS (SELECT key FROM SillyCodeTech.DiscordLoginCookies WHERE key = " +  + ") as OUTPUT;", function (err, result) {
+        con.query("SELECT Response FROM SillyCodeTech.DiscordLoginCookies WHERE key = " +  + ");", function (err, result) {
           if (err) res.write("couldn't create cookie because " + err);
-          res.write(result != 0) 
+          res.write(result) 
         });
   
       });
@@ -74,14 +74,6 @@ router.post("/check/cookie",(req,res) => {
   res.write("");
   res.end();
 });
-
-//test
-router.post("/test",(req,res) => {
-  res.write("hah");
-  res.write(DB.getTable("SillyCodeTech","DiscordLoginCookies",1)[0]);
-  res.end();
-});
-
 
 //       boolean   string,int
 function getDBAcces(token,colum) {

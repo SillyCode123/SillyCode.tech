@@ -92,9 +92,20 @@ function load(setRefresh, refresh) {
 
             //give the build controller the data from the Api after asking for a cookie
             buildController(id, username, avatar ,discriminator);  
+            if(alert("Use cookie") && document.cookie.includes("DiscordLoginCode")){
+                fetch('https://discord.com/api/users/@me', {
+                    headers: {
+                        authorization: "Bearer" + process.env.REACT_APP_Token,
+                    },
+                })
+                then(result => result.json())
+                .then(response => {
+                    
+                }).catch(console.error);
+
+            }
             setRefresh(refresh + 1);
-        })
-        .catch(console.error); 
+        }).catch(console.error); 
     
     } 
 }    
