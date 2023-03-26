@@ -1,6 +1,0 @@
-{
-  "dependencies": {
-    "dotenv": "^16.0.3",
-    "serverless-http": "^3.2.0"
-  }
-}
