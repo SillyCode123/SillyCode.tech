@@ -6,6 +6,7 @@ import logo from '../../img/SillyCoder.png';
 var token_type = "empty";
 var access_token = "empty";
 var buttonText = "Login"; 
+var log = false;
 
 //api
 var api = "https://api.sillycode.tech/.netlify/functions/api";
@@ -59,9 +60,11 @@ function Dashboard() {
 }
 
 function load(setRefresh, refresh) {
-
-    if (window.location.href.toString().includes("#") && document.cookie.includes("login")) {
-        console.log
+    console.warn(document.cookie);
+    if (window.location.href.toString().includes("#") && document.cookie == "") {
+        document.cookie="login=true;";
+        //load(setRefresh,refresh)
+        console.error("Hhhhhhh")
     } 
 }    
 
@@ -162,8 +165,6 @@ function login(setRefresh,refresh) {
     .then(result => result.json())
     .then(response => {
         clearContent();
-        
-        document.cookie=document.cookie + "login=true;";
         //sth button to logout
         buttonText = "Loguot"
         const {id, username, avatar ,discriminator} = response;
