@@ -2,6 +2,7 @@
 const express = require('express');
 const serverless = require('serverless-http');
 require('dotenv').config();
+const mysql = require('mysql2');
 
 //Express
 const app = express();
@@ -10,14 +11,12 @@ const router = express.Router();
 
 //other vars
 const indexHtml = '<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>SillyCodeAPI</title></head><body><a href="https://sillycode.tech" style="color: #0086f5" class=".zoom">Click here to go to our Main Page</a> <style> body{--color-darkgrey: #1f1e1e;--color-white: #ffffff;--font: "Red_Hat_Mono", monospace;font-family: "Red_Hat_Mono", monospace;font-weight: 400;font-style: normal;font-size: calc(1rem + 0.4vw);line-height: 3ch;color: var(--color-white);background-color: var(--color-darkgrey);text-align: center;} a {text-decoration: none;}</style></body></html>';
-
-//DB
-const mysql = require("mysql");
-var con = mysql.createConnection({
+const connection = mysql.createConnection({
   host: process.env.DB_HOST,
-  user: process.env.DB_USER,
+  user:process.env.DB_USER,
   password: process.env.DB_PSW
 });
+
 
 //express settings
 app.use("/.netlify/functions/api/", router);
@@ -32,81 +31,27 @@ app.use((err, req, res, next) => {
   res.status(500).send(indexHtml)
 })
 
-//create cookie
-router.post("/create/cookie",(req,res) => {
-  try{
-    if(getDBAcces(req.headers.authorization.split(" ")[1],3)){
-      var i = 1;
-      var cokie = makeRAND(i);
-      while(!existInTable(cokie) && i >= 16777215){
-        cokie = makeRAND(i)
-        i++;
-      }
 
-      if(!existInTable(cokie)){
-        insertInTable("SillyCodeTech","DiscordLoginCookies",cokie)
-        res.write(cokie);
-      } else {
-        alert("no cookies avaible more.")
-      }
-    }
-  } catch (error) { res.write("failed because " + error);}
-  res.write("");
-  res.end();
-});
-
-
-
-
+//Routes
 router.get("/test", (req,res) => {
-  res.write(con.query("Select * from SillyCodeTech.DiscordLoginCookies"))
+  try {
+    res.write(executeQuery("Select * from SillyCodeTech.DiscordLoginCookies;") + "")
+  } catch (error) {
+    res.write(error);
+  }
+ 
   res.end();
 });
 
-//       boolean   string,int
-function getDBAcces(token,colum) {
-  if(existInTable("General","DBAccessTokens",1,token)){
-    var table = getTable("General","DBAccessTokens",2);
-    if (table[colum] != null) return true;
-  } 
-  return false;
+function executeQuery(cmd) {
+  connection.query(
+    cmd,
+    function(err, results, fields) {
+      console.log(results); // results contains rows returned by server
+      console.log(fields); // fields contains extra meta data about results, if available
+      return results;
+    }
+  );
 }
-
-function makeRAND(length) {
-  let result = '';
-  const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-  const charactersLength = characters.length;
-  let counter = 0;
-  while (counter < length) {
-    result += characters.charAt(Math.floor(Math.random() * charactersLength));
-    counter += 1;
-  }
-  return result;
-}
-
-
-function getTable(database,tableName,colum) {
-  con.query("SELECT * FROM " + database + "." + tableName, (err, results, flieds) => {
-      if (err) return null;
-      console.log('The solution is: ', results[colum]);
-      return results[colum];
-  });
-  return null;
-}
-
-function existInTable(database,tableName,colum,search) {
-  var table = getTable(database,tableName,colum);
-  if(table != null){
-    table.forEach(element => {
-      if(element.includes(search)) return true;
-  });
-  }
-  return false;
-}
-
-function insertInTable(db,table,insert) {
-  con.query("INSERT INTO " + db + "." + table + "VALUES('" + insert + "')");
-}
-
 
 module.exports.handler = serverless(app);
