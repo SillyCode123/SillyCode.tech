@@ -92,6 +92,12 @@ a {text-decoration: none;}
   justify-content:center;
 }
 
+.text {
+  display: flex;
+  justify-content: center;
+  padding-top: 120px;
+}
+
 .bigger {
   font-size: larger;
 }
@@ -133,6 +139,7 @@ nav {
   grid-template-columns: auto auto auto;
   padding-left: 1%;
   padding-right: 1%;
+  padding-top: 120px;
 }
 
 .grid-around-space {
@@ -150,10 +157,10 @@ header {
 
 /*ANCHOR - Buttons */
 
-.dev-team-button {
+.devteambutton {
   position: absolute;
-  top: 15px;
-  left: 60px;
+  top: 27px;
+  right: 210px;
 }
 
 .logoNav {
@@ -197,6 +204,17 @@ button {
   height: 150px;
   border: none;
   background: linear-gradient(10deg,#00447b, #008cff);
+}
+
+.loginbtn {
+  border-radius: 50px;
+  width: 120px;
+  height: 60px;
+  border: none;
+  background: linear-gradient(10deg,#00447b, #008cff);
+  font-size: 1.2rem; /* hinzugefügt, um die Schriftgröße anzupassen */
+  position: absolute;
+  right: 75px;
 }
 
 .devTeamBtn {

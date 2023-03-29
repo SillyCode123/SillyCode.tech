@@ -8,10 +8,10 @@ function Index() {
         window.location = "/dashboard";
     }
 
-    const fun = () => {
+    /* const fun = () => {
         window.location = "/functions";
     }
-
+    */
     const mem = () => {
         window.location = "/devteam";
     }
@@ -43,21 +43,21 @@ function Index() {
             >
               Dashboard
             </motion.button>
+            <motion.button
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+              className="devteambutton"
+              onClick={mem}
+            >
+              About Us
+            </motion.button>
           </div>
         </div>
         <br />
         <main>
           <div className="space">
-            <motion.button
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.9 }}
-              className="dev-team-button"
-              onClick={mem}
-            >
-              About Us
-            </motion.button>
-      
-            <motion.button
+             {/* 
+             <motion.button  
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
               className="indexBtn"
@@ -65,6 +65,7 @@ function Index() {
             >
               Functions
             </motion.button>
+            */}
           </div>
           <br />
         </main>

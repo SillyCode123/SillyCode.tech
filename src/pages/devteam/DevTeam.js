@@ -11,6 +11,10 @@ function DevTeam() {
         window.location = "/devteam/sillygoose";
     }
 
+    const mem = () => {
+      window.location = "/devteam";
+  }
+
     const kd = () => {
         window.location = "/devteam/kindskopf";
     }
@@ -20,28 +24,52 @@ function DevTeam() {
     }
 
     return (
-        <body>
-             <nav>
-                <div className='logoNav'>
+        <body>  
+          <div className="navbar">
+            <div className='logoNav'>
                     
-                    <motion.a
-                    href='../index'
-                    whileHover={{scale: 1.1}}
-                    whileTap={{scale: 0.9}}
-                    ><img className='round' alt='' src={logo} width="150px" height="150px" ></img>
-                    </motion.a>
+                <motion.a
+              href="index"
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+              className = "logoBtn"
+            >
+              <img
+                className="logo"
+                alt=""
+                src={logo}
+                width="150px"
+                height="150px"
+              ></img>
+            </motion.a>
                     
-                    <motion.button
-                    whileHover={{scale: 1.1}}
-                    whileTap={{scale: 0.9}}
-                    className='indexBtn' 
-                    onClick={dash}
-                    >Dashboard</motion.button>  
+            <motion.button
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+              className="DashboardBtn"
+              onClick={dash}
+            >
+              Dashboard
+            </motion.button>
+
+            <motion.button
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+              className="devteambutton"
+              onClick={mem}
+            >
+              About Us
+            </motion.button>
                      
-                </div>   
-            </nav>
+                </div>
+              </div>
+         
             <main>
-                <div style={{fontSize:40}}><motion.h1 className='middle' style={{color:'orange'}}>Members</motion.h1></div>
+                <div style={{fontSize:40}}>
+                  <motion.h1 className='text' style={{color:'orange'}}
+                  >Members
+                  </motion.h1>
+                  </div>
                 <br/>
                 <div className='middle'>
                     <motion.button  

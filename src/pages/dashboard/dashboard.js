@@ -15,6 +15,10 @@ function Dashboard() {
 
     const [refresh, setRefresh] = React.useState(0);
 
+    const mem = () => {
+        window.location = "/devteam";
+    }
+
     window.addEventListener('load', load(setRefresh,refresh));
 
     const loginclick = () => {
@@ -31,24 +35,42 @@ function Dashboard() {
     return (
         <body>
             <nav>
-                <div className='logoNav'>
-                    
-                    <motion.a
-                    href='index'
-                    whileHover={{scale: 1.1}}
-                    whileTap={{scale: 0.9}}
-                    ><img className='round' alt='' src={logo} width="150px" height="150px" ></img>
-                    </motion.a>
-                    
-                    <motion.button
-                    whileHover={{scale: 1.1}}
-                    whileTap={{scale: 0.9}}
-                    className='indexBtn' 
-                    id="loginButton"
-                    onClick={loginclick}
-                    >{buttonText}</motion.button>  
-                     
-                </div>   
+            <div className="navbar">
+          <div className="logoNav">
+            <motion.a
+              href="index"
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+              className = "logoBtn"
+            >
+              <img
+                className="logo"
+                alt=""
+                src={logo}
+                width="150px"
+                height="150px"
+              ></img>
+            </motion.a>
+
+            <motion.button
+                whileHover={{scale: 1.1}}
+                whileTap={{scale: 0.9}}
+                className='loginbtn' 
+                id="loginButton"
+                onClick={loginclick}
+                >{buttonText}
+            </motion.button>
+      
+            <motion.button
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+              className="devteambutton"
+              onClick={mem}
+            >
+              About Us
+            </motion.button>
+          </div>
+        </div>
             </nav>
             <br/>
 
