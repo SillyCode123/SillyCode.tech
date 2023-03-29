@@ -1,3 +1,25 @@
+/*ANCHOR - Images */
+
+.logo {
+  border-radius: 50px;
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+}
+
+.logo123 {
+  border-radius: 50px;
+  height: 35%;
+  margin-left: 2%;
+  
+}
+
+/*ANCHOR - 404 */
+
+.App-link {
+  color: #61dafb;
+}
+
 .App {
   text-align: center;
 }
@@ -25,10 +47,6 @@
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
@@ -37,6 +55,8 @@
     transform: rotate(360deg);
   }
 }
+
+/*ANCHOR - Standard */
 
 body {
   --color-darkgrey: #1f1e1e;
@@ -52,6 +72,18 @@ body {
 } 
 
 a {text-decoration: none;}
+
+header {
+  font-weight: 700;
+}
+
+button {
+  color: #101315;
+  background-color: #006ec8;
+  font-size: large;
+}
+
+/*ANCHOR - Space shit */
 
 .left {
   display: flex;
@@ -73,6 +105,20 @@ a {text-decoration: none;}
   
 }
 
+.middle {
+  display: flex;
+  justify-content:center;
+}
+
+.space {
+  display: flex;
+  justify-content: center;
+  padding-top: 80px; /* Add some padding to the top of the content to make space for the navbar */
+}
+
+
+/*ANCHOR - Navbar */
+
 .navbar {
   position: fixed;
   top: 0;
@@ -87,28 +133,6 @@ a {text-decoration: none;}
   z-index: 1;
 }
 
-.middle {
-  display: flex;
-  justify-content:center;
-}
-
-.text {
-  display: flex;
-  justify-content: center;
-  padding-top: 120px;
-}
-
-.bigger {
-  font-size: larger;
-}
-
-.space {
-  display: flex;
-  justify-content: center;
-  padding-top: 80px; /* Add some padding to the top of the content to make space for the navbar */
-}
-
-
 nav {
   background-color: #282c34;
   padding: 25px;
@@ -119,18 +143,19 @@ nav {
   z-index: 999;
 }
 
-.logo {
-  border-radius: 50px;
-  width: 60px;
-  height: 60px;
-  object-fit: contain;
+
+/*ANCHOR - Texts */
+
+.text {
+  display: flex;
+  justify-content: center;
+  padding-top: 120px;
 }
 
-.logo123 {
-  border-radius: 50px;
-  height: 35%;
-  margin-left: 2%;
-  
+
+
+.bigger {
+  font-size: larger;
 }
 
 .grid {
@@ -149,10 +174,6 @@ nav {
 .overflow{
   overflow-y: hidden;
   overflow-x: hidden;
-}
-
-header {
-  font-weight: 700;
 }
 
 /*ANCHOR - Buttons */
@@ -189,12 +210,6 @@ header {
   border: none;
   padding: 0;
   margin: 0;
-}
-
-button {
-  color: #101315;
-  background-color: #006ec8;
-  font-size: large;
 }
 
 .indexBtn {
