@@ -63,9 +63,9 @@ function SillyGoose() {
               Dashboard
             </motion.button>
             <motion.button
-              whileHover={{ scale: 1.1 }}
+              whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.9 }}
-              className="devteambutton"
+              className="aboutusbtn"
               onClick={mem}
             >
               About Us

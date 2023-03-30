@@ -44,18 +44,18 @@ function Index() {
               Dashboard
             </motion.button>
             <motion.button
-              whileHover={{ scale: 1.1 }}
+              whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.9 }}
-              className="devteambutton"
+              className="aboutusbtn"
               onClick={mem}
             >
               About Us
             </motion.button>
           </div>
         </div>
-        <br />
+        <br/>
         <main>
-          <div className="space">
+        {/*<div className="curve"></div>*/}
              {/* 
              <motion.button  
               whileHover={{ scale: 1.1 }}
@@ -66,7 +66,6 @@ function Index() {
               Functions
             </motion.button>
             */}
-          </div>
           <br />
         </main>
       </body>
