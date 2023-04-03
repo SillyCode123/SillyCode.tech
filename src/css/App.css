@@ -153,7 +153,7 @@ nav {
 .text {
   display: flex;
   justify-content: center;
-  padding-top: 120px;
+  padding-top: 290px;
 }
 
 .MainText {
@@ -344,26 +344,40 @@ button:hover {
 
 /*ANCHOR - Curve */
 
-.custom-shape-divider-top-1680212617 {
+.curve {
   position: absolute;
-  top: 80px;
-  left: 0;
+  height: 250px;
   width: 100%;
-  overflow: hidden;
-  line-height: 0;
+  bottom: 0;
+  text-align: center;
 }
 
-.custom-shape-divider-top-1680212617 svg {
-  position: relative;
+.curve::before {
+  content: '';
   display: block;
-  width: calc(121% + 1.3px);
-  height: 242px;
-  transform: rotateY(180deg);
+  position: absolute;
+  border-radius: 100% 50%;
+  width: 60%;
+  height: 100%;
+  transform: translate(80%, 60%);
+  background-color: hsl(216, 21%, 16%);
 }
 
-.custom-shape-divider-top-1680212617 .shape-fill {
-  fill: #4D43DB;
+.curve::after {
+  content: '';
+  display: block;
+  position: absolute;
+  border-radius: 100% 50%;
+  width: 55%;
+  height: 99%;
+  background-color: #3c31dd;
+  transform: translate(-0.8%, 40%);
 }
+
+.bgblue {
+  background: #3c31dd;
+}
+
 
 section {
   position: relative;
