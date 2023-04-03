@@ -22,28 +22,48 @@ function FunctionsPage() {
         }
     }
 
+    const mem = () => {
+        window.location = "/devteam";
+    }
+
     return (
         <body>
             <nav>
-                <div className='logoNav'>
-                    
-                    <motion.a
-                    href='index'
-                    whileHover={{scale: 1.1}}
-                    whileTap={{scale: 0.9}}
-                    ><img className='round' alt='' src={logo} width="150px" height="150px" ></img>
-                    </motion.a>
-
-                    <h1 className='middle' style={{alignItems: 'center', color:'dodgerblue'}} >Functions of SillyCode.tech</h1>
-                    
-                    <motion.button
-                    whileHover={{scale: 1.1}}
-                    whileTap={{scale: 0.9}}
-                    className='indexBtn' 
-                    onClick={dash}
-                    >Dashboard</motion.button>  
-                     
-                </div>   
+            <div className="navbar">
+          <div className="logoNav">
+            <motion.a
+              href="index"
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+              className = "logoBtn"
+            >
+              <img
+                className="logo"
+                alt=""
+                src={logo}
+                width="150px"
+                height="150px"
+              ></img>
+            </motion.a>
+      
+            <motion.button
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+              className="DashboardBtn"
+              onClick={dash}
+            >
+              Dashboard
+            </motion.button>
+            <motion.button
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+              className="devteambutton"
+              onClick={mem}
+            >
+              About Us
+            </motion.button>
+          </div>
+        </div>
             </nav>
             <br/>
             <main>
