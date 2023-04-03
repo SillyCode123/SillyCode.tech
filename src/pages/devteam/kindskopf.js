@@ -24,37 +24,37 @@ function Kindskopf() {
       <nav id="north">
         <div className="navbar">
           <div className="logoNav">
-            <motion.a
-              href="index"
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.9 }}
-              className="logoBtn"
-            >
-              <img
-                className="logo"
-                alt=""
-                src={logo}
-                width="150px"
-                height="150px"
-              ></img>
-            </motion.a>
+          <motion.a
+            href="index"
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
+            className="logoBtn"
+          >
+            <img
+              className="logo"
+              alt=""
+              src={logo}
+              width="150px"
+              height="150px"
+            ></img>
+          </motion.a>
 
-            <motion.button
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.9 }}
-              className="DashboardBtn"
-              onClick={dash}
-            >
-              Dashboard
-            </motion.button>
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.9 }}
-              className="aboutusbtn"
-              onClick={mem}
-            >
-              About Us
-            </motion.button>
+          <motion.button
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
+            className="DashboardBtn"
+            onClick={dash}
+          >
+            Dashboard
+          </motion.button>
+          <motion.button
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.9 }}
+            className="aboutusbtn"
+            onClick={mem}
+          >
+            About Us
+          </motion.button>
           </div>
         </div>
       </nav>

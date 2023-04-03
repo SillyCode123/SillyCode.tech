@@ -110,11 +110,16 @@ button {
   display: flex;
   justify-content: center;
 }
+.clicks-middle {
+  display: flex;
+  justify-content: center;
+  margin-top: 200px;
+}
 
 .space {
   display: flex;
   justify-content: center;
-  padding-top: 80px; /* Add some padding to the top of the content to make space for the navbar */
+  padding-top: 80px;
 }
 
 /*ANCHOR - Navbar */
@@ -222,6 +227,7 @@ nav {
 .indexBtn {
   --out-color: #282c34;
   border-radius: 50px;
+  justify-content: space-between;
   width: 150px;
   height: 150px;
   border: none;
@@ -272,11 +278,11 @@ button:hover {
 /*ANCHOR - Colors */
 
 .blue {
-  background: #3c31dd;
+  color: #3c31dd;
 }
 
 .red {
-  background: #dd3f31;
+  color: #dd3f31;
 }
 
 .pink {
