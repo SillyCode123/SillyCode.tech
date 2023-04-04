@@ -50,29 +50,23 @@ function Index() {
       </div>
       <br />
       <main>
-
-         <section class="bgblue">
-      <h1>Nice Curves!</h1>
-      <p>A website is like a road. The more curves it has the more interesting it is.</p>
-      <div class="curve"></div>
-    </section>
-
-    <section>
-      <h1>But what does our Site?</h1>
-      <p>At the moment there are only a few <motion.a href="/functions" style={{color:"blue"}} whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.9 }}>functions</motion.a> for fun. <br></br>Currently we're working on an api for minecraft servers.</p>
-    </section>
-        {/* 
-             <motion.button  
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.9 }}
-              className="indexBtn"
-              onClick={fun} 
-            >
-              Functions
-            </motion.button>
-            */}
-        <br />
+        <section className="bgblue">
+          <h1>Nice Curves!</h1>
+          <p>A website is like a road. The more curves it has the more interesting it is.</p>
+          <div className="curve"></div>
+        </section>
+        <section>
+          <h1>But what does our Site?</h1>
+          <p>
+            At the moment there are only a few <motion.a
+              href="/functions" style={{color:"blue"}} whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}>functionsS
+            </motion.a> for fun.
+            <br/>
+            Currently we're working on an api for minecraft servers.
+          </p>
+        </section>
+        <br/>
       </main>
     </body>
   );
