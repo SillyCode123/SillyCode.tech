@@ -6,11 +6,7 @@ function Index() {
   const dash = () => {
     window.location = "/dashboard";
   };
-
-  /* const fun = () => {
-        window.location = "/functions";
-    }
-    */
+    
   const mem = () => {
     window.location = "/devteam";
   };
@@ -62,8 +58,9 @@ function Index() {
     </section>
 
     <section>
-      <h1>Nice Curves!</h1>
-      <p>A website is like a road. The more curves it has the more interesting it is.</p>
+      <h1>But what does our Site?</h1>
+      <p>At the moment there are only a few <motion.a href="/functions" style={{color:"blue"}} whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}>functions</motion.a> for fun. <br></br>Currently we're working on an api for minecraft servers.</p>
     </section>
         {/* 
              <motion.button  

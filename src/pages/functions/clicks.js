@@ -31,12 +31,12 @@ function Clicks() {
   };
 
   return (
-    <body>
+    <body className="overflow">
       <nav>
         <div className="navbar">
           <div className="logoNav">
             <motion.a
-              href="index"
+              href="../index"
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
               className="logoBtn"
@@ -75,7 +75,8 @@ function Clicks() {
           id="clickCounter"
           style={{ paddingRight: "2%", paddingTop: "2.5%" }}
         >
-          Clicks: {clicks}
+          Clicks: 
+          <span className="middle" style={{paddingTop: "5%"}}>{clicks}</span>
         </motion.h1>
         <div className="grid-around-space">
           <motion.button

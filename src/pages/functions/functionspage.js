@@ -70,45 +70,49 @@ function FunctionsPage() {
       </nav>
       <br />
       <main>
-        <div className="space">
-          <motion.button
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.9 }}
-            className="indexBtn"
-            onClick={nimm}
-          >
-            NimmGame
-          </motion.button>
+        <div className="space-onTop">
+          <div className="space">
+              <motion.button
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
+                className="indexBtn"
+                onClick={nimm}
+              >
+                NimmGame
+              </motion.button>
+            </div>
 
-          <motion.button
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.9 }}
-            className="indexBtn"
-            onClick={click}
-          >
-            Clicks
-          </motion.button>
+          <div className="space">
+            <motion.button
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+              className="indexBtn"
+              onClick={click}
+            >
+              Clicks
+            </motion.button>
+          </div>
 
-          <motion.button
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.9 }}
-            className="indexBtn"
-            onClick={oos}
-          >
-            Visit our Old Page
-          </motion.button>
-
-          <motion.button
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.9 }}
-            className="indexBtn"
-            onClick={dash}
-          >
-            Dashboard
-          </motion.button>
+          <div className="space">
+            <motion.button
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+              className="indexBtn"
+              onClick={oos}
+            >
+              Visit our Old Page
+            </motion.button>
+          </div>
+          
+          <div className="space">
+            <motion.button
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+              className="indexBtn"
+              onClick={dash}
+            > Dashboard </motion.button>
+            </div>
         </div>
-        <br />
-        <div className="space"></div>
       </main>
     </body>
   );

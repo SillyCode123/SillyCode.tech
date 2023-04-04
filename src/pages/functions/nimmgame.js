@@ -95,7 +95,7 @@ function NimmGame() {
             <div className="navbar">
           <div className="logoNav">
             <motion.a
-              href="index"
+              href="../index"
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
               className = "logoBtn"
