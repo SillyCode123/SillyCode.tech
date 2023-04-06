@@ -11,6 +11,9 @@
   border-radius: 50px;
   height: 35%;
   margin-left: 2%;
+  width: 5%;
+  height: 5%;
+  transform: translate(0px, -9px);
 }
 
 /*ANCHOR - 404 */
