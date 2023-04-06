@@ -374,11 +374,11 @@ button:hover {
   content: '';
   display: block;
   position: absolute;
-  border-radius: 100% 50%;
+  border-radius: 104% 50%;
   width: 55%;
-  height: 99%;
+  height: 98%;
   background-color: #3c31dd;
-  transform: translate(-0.8%, 40%);
+  transform: translate(0.01%, 40%);
 }
 
 .bgblue {

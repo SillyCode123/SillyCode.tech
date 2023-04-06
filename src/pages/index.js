@@ -60,10 +60,10 @@ function Index() {
           <p>
             At the moment there are only a few <motion.a
               href="/functions" style={{color:"blue"}} whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.9 }}>function
+              whileTap={{ scale: 0.9 }}>functions
             </motion.a> for fun.
             <br/>
-            Currently we're working on an api for minecraft servers.
+            Currently we're working on an API for Minecraft servers.
           </p>
         </section>
         <br/>
