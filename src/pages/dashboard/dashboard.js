@@ -90,7 +90,7 @@ function Dashboard() {
 var loaded = true;
 
 function load(setRefresh, refresh) {
-    if (window.location.href.toString().includes("#") && !document.cookie.includes("login") && loaded) {
+    if (window.location.href.toString().includes("#") && loaded) {
         loaded = false;
         buildController();
         setRefresh(refresh + 1);
