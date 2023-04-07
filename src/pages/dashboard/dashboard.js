@@ -5,11 +5,10 @@ import logo from "../../img/SillyCoder.png";
 //setup the variables
 var token_type = "empty";
 var access_token = "empty";
-var buttonText = "Login";
-var log = false;
+var buttonText = "Login"; 
 
 //api
-var api = "https://api.sillycode.tech/.netlify/functions/api";
+var api = "http://167.235.230.192:2020/";
 
 function Dashboard() {
   const [refresh, setRefresh] = React.useState(0);
@@ -21,14 +20,22 @@ function Dashboard() {
   window.addEventListener("load", load(setRefresh, refresh));
 
   const loginclick = () => {
-    if (window.location.href.includes("sillycode.tech")) {
-      window.location.href =
-        "https://discord.com/api/oauth2/authorize?client_id=1043950277738385499&redirect_uri=http%3A%2F%2Fsillycode.tech%2Fdashboard&response_type=token&scope=identify%20guilds";
-    } else {
-      window.location.href =
-        "https://discord.com/api/oauth2/authorize?client_id=1043950277738385499&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Fdashboard&response_type=token&scope=identify%20guilds";
-    }
-  };
+    if(window.location.href.toString().includes("#")){
+      document.cookie = "";
+      if(window.location.href.includes("sillycode.tech")){
+        window.location.href = "https://sillycode.tech/dashboard";
+      } else{
+        window.location.href = "http://localhost:3000/dashboard";
+        console.log("true");
+      }
+    }  else{
+      if(window.location.href.includes("sillycode.tech")){
+          window.location.href = "https://discord.com/api/oauth2/authorize?client_id=1043950277738385499&redirect_uri=http%3A%2F%2Fsillycode.tech%2Fdashboard&response_type=token&scope=identify%20guilds";
+      } else {                                                   
+          window.location.href = "https://discord.com/api/oauth2/authorize?client_id=1043950277738385499&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Fdashboard&response_type=token&scope=identify%20guilds";
+      }
+    }  
+  }
 
   return (
     <body>
@@ -80,33 +87,76 @@ function Dashboard() {
   );
 }
 
+var loaded = true;
+
 function load(setRefresh, refresh) {
-  console.warn(document.cookie);
-  if (window.location.href.toString().includes("#") && document.cookie == "") {
-    document.cookie = "login=true;";
-    //load(setRefresh,refresh)
-    console.error("Hhhhhhh");
-  }
+    if (window.location.href.toString().includes("#") && loaded) {
+        loaded = false;
+        buildController();
+        setRefresh(refresh + 1);
+    } 
+}    
+
+function buildController() {
+    clearContent();
+    login();
+    
+} 
+
+function clearContent() {
+    try {
+        document.querySelector("br").remove();
+        document.querySelector("span").remove();
+    } catch (error) {
+        
+    }
 }
 
-function buildController(id, username, avatar, discriminator) {
-  try {
-    buildHello(id, username, avatar, discriminator);
-  } catch (error) {}
-  if (window.confirm("Use cookie?")) {
-    fetch("https://discord.com/api/users/@me", {
-      headers: {
-        authorization: "Bearer" + process.env.REACT_APP_Token,
-      },
+function login() {
+    //get the url
+    let url = document.URL;
+
+    //split the url in the terms we need
+    const split = url.split("=");
+    const split2 = split[1].split("&");
+    const split3 = split[2].split("&");
+
+    //order the tokens their content
+    token_type = split2[0];
+    access_token = split3[0];
+
+    //go with the token and token type to the Discordapi
+    fetch('https://discord.com/api/users/@me', {
+    headers: {
+    authorization: `${token_type} ${access_token}`,
+    },
     })
-      .then((result) => result.json())
-      .then((response) => {})
-      .catch(console.error);
-  }
+    .then(result => result.json())
+    .then(response => {
+        const {id, username, avatar ,discriminator} = response
+        buildHello(id, username, avatar ,discriminator);
+        if(window.confirm("Use cookie?")){
+          clearContent();
+          fetch(api + '/create/cookie', {
+              headers: {
+                  authorization: "Bearer" + process.env.REACT_APP_Token,
+                  data: response + "sss",
+              },
+          })
+          .then(result => result.json())
+          .then(response => {
+              console.log(response);
+          }).catch(console.error);
+        }
+    }).catch(console.error); 
+
+    buttonText = "Logout";
+   
 }
 
-function buildHello(id, username, avatar, discriminator) {
-  document.getElementById("content").className = "middle";
+function buildHello(id, username, avatar ,discriminator) {
+  clearContent(); 
+  document.getElementById("content").style = "padding: 2%; padding-top: 10%;";
 
   //go the div where we write in
   let body = document.getElementById("content");
@@ -122,7 +172,8 @@ function buildHello(id, username, avatar, discriminator) {
   let img = document.createElement("img");
   img.src = avaurl;
   img.alt = "";
-  img.className = "round123";
+  img.className = "logo123";
+
 
   //create the span for the username
   let span = document.createElement("span");
@@ -134,53 +185,16 @@ function buildHello(id, username, avatar, discriminator) {
 
   let test = document.createElement("h1");
   test.innerText = "Nothing to Display.";
+  test.className = "middle";
 
   //append the childs
   body.appendChild(h1);
   h1.appendChild(img);
   h1.appendChild(span);
   h1.appendChild(span1);
+  body.appendChild(document.createElement("br"))
+  body.appendChild(test);
 
-  document.getElementById("root").appendChild(test);
-  test.className = "space";
-}
-
-function clearContent() {
-  try {
-    document.querySelector("br").remove();
-    document.querySelector("span").remove();
-  } catch (error) {}
-}
-
-function login(setRefresh, refresh) {
-  //get the url
-  let url = document.URL;
-
-  //split the url in the terms we need
-  const split = url.split("=");
-  const split2 = split[1].split("&");
-  const split3 = split[2].split("&");
-
-  //order the tokens their content
-  token_type = split2[0];
-  access_token = split3[0];
-
-  //go with the token and token type to the Discordapi
-  fetch("https://discord.com/api/users/@me", {
-    headers: {
-      authorization: `${token_type} ${access_token}`,
-    },
-  })
-    .then((result) => result.json())
-    .then((response) => {
-      clearContent();
-      //sth button to logout
-      buttonText = "Loguot";
-      const { id, username, avatar, discriminator } = response;
-      buildController(id, username, avatar, discriminator);
-      setRefresh(refresh + 1);
-    })
-    .catch(console.error);
 }
 
 export default Dashboard;
