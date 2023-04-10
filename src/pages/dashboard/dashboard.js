@@ -32,7 +32,7 @@ function Dashboard() {
       if(window.location.href.includes("sillycode.tech")){
           window.location.href = "https://discord.com/api/oauth2/authorize?client_id=1043950277738385499&redirect_uri=http%3A%2F%2Fsillycode.tech%2Fdashboard&response_type=token&scope=identify%20guilds";
       } else if(window.location.href.includes("sillycode.netlify.app/")) {
-        window.location.href = "https://discord.com/api/oauth2/authorize?client_id=1043950277738385499&redirect_uri=https%3A%2F%2Fsillycode.netlify.app%2F%2Fdashboard&response_type=token&scope=identify%20guilds"
+        window.location.href = "https://discord.com/api/oauth2/authorize?client_id=1043950277738385499&redirect_uri=https%3A%2F%2Fsillycode.netlify.app%2Fdashboard&response_type=token&scope=identify%20guilds"
       }else {                                                   
           window.location.href = "https://discord.com/api/oauth2/authorize?client_id=1043950277738385499&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Fdashboard&response_type=token&scope=identify%20guilds";
       }
