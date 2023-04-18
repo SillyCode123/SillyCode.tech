@@ -8,7 +8,7 @@ var access_token = "empty";
 var buttonText = "Login"; 
 
 //api
-var api = "http://167.235.230.192:2020/";
+var api = "https://api.sillycode.tech:2020/";
 
 function Dashboard() {
   const [refresh, setRefresh] = React.useState(0);
