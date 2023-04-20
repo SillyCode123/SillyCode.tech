@@ -51,19 +51,18 @@ function Index() {
       <br />
       <main>
         <section className="bgblue">
-          <h1>Nice Curves!</h1>
-          <p>A website is like a road. The more curves it has the more interesting it is.</p>
+
           <div className="curve"></div>
         </section>
         <section>
-          <h1>But what does our Site?</h1>
+          <h1>IN WORK</h1>
           <p>
             At the moment there are only a few <motion.a
               href="/functions" style={{color:"blue"}} whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}>functions
             </motion.a> for fun.
             <br/>
-            Currently we're working on an API for Minecraft servers.
+            IN WORK
           </p>
         </section>
         <br/>

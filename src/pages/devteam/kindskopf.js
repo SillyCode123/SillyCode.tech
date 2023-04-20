@@ -120,7 +120,7 @@ function Kindskopf() {
                 fontSize: 40,
                 textDecoration: "none",
               }}
-              href="https://discord.gg/DKRcNd7Hpn"
+              href=""
               target={"_blank"}
             >
               Our Discord
