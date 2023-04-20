@@ -8,7 +8,7 @@ var access_token = "empty";
 var buttonText = "Login"; 
 
 //api
-var api = "http://167.235.230.192:2020/";
+var api = "https://api.sillycode.tech:2020/";
 
 function Dashboard() {
   const [refresh, setRefresh] = React.useState(0);
@@ -31,7 +31,9 @@ function Dashboard() {
     }  else{
       if(window.location.href.includes("sillycode.tech")){
           window.location.href = "https://discord.com/api/oauth2/authorize?client_id=1043950277738385499&redirect_uri=http%3A%2F%2Fsillycode.tech%2Fdashboard&response_type=token&scope=identify%20guilds";
-      } else {                                                   
+      } else if(window.location.href.includes("sillycode.netlify.app/")) {
+        window.location.href = "https://discord.com/api/oauth2/authorize?client_id=1043950277738385499&redirect_uri=https%3A%2F%2Fsillycode.netlify.app%2Fdashboard&response_type=token&scope=identify%20guilds"
+      }else {                                                   
           window.location.href = "https://discord.com/api/oauth2/authorize?client_id=1043950277738385499&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Fdashboard&response_type=token&scope=identify%20guilds";
       }
     }  
