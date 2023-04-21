@@ -397,3 +397,40 @@ section {
   min-height: 400px;
   padding-top: 100px;
 }
+
+
+/*ANCHOR - Mobile Shit */
+
+@media (pointer:none), (pointer:coarse) {
+  html{
+    overflow-x: hidden;
+  }
+
+  .space-onTop{
+    display: grid;
+    padding: 5%;
+    justify-content: none;
+    padding-top: 15%;
+  }
+
+  .space {
+    display: flex;
+    justify-content: center;
+    padding: 3%;
+  }
+
+  .clicks-middle {
+    display: grid;
+    margin: 16%;
+  }
+
+  .grid{
+    display: grid;
+    padding: 1%;
+    grid-template-columns: inherit;
+    padding-left: 1%;
+    padding-right: 1%;
+    padding-top: 23%;
+  }
+
+}

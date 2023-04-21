@@ -14,16 +14,6 @@ function Clicks() {
 
   const addElement = () => {
     clicks += 1;
-    let t = document.createElement("li");
-    t.innerText = "click: " + clicks;
-    document.getElementById("test").appendChild(t);
-    if (document.getElementById("clickCounter").style.scale === 1.0) {
-      document.getElementById("clickCounter").style.scale = 1.1;
-    }
-
-    setTimeout(() => {
-      document.getElementById("clickCounter").style.scale = 1.0;
-    }, 100);
   };
 
   const mem = () => {
@@ -102,19 +92,6 @@ function Clicks() {
             }}
           >
             Clear
-          </motion.button>
-        </div>
-
-        <div className="grid-around-space">
-          <motion.button
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.9 }}
-            className="indexBtn"
-            onClick={() => {
-              window.location = "../../";
-            }}
-          >
-            Go Home
           </motion.button>
         </div>
 

@@ -24,7 +24,7 @@ function DevTeam() {
   };
 
   return (
-    <body>
+    <>
       <div className="navbar">
         <div className="logoNav">
           <motion.a
@@ -105,7 +105,7 @@ function DevTeam() {
           </motion.button>
         </div>
       </main>
-    </body>
+    </>
   );
 }
 

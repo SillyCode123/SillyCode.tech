@@ -13,8 +13,6 @@ var btn2text = "Go Functions";
 
 var btn3text = "Go Home";
 
-var playstate = "Play";
-
 let münzen = 0;
 
 let humantokens = 0;
@@ -51,7 +49,7 @@ function NimmGame() {
                 PlayAgain();
             }  
         } else {
-            playstate = "Playing"
+           
             Play();
         }
     }
@@ -90,7 +88,7 @@ function NimmGame() {
     }
 
     return (
-        <body>
+        <>
             <nav>
             <div className="navbar">
           <div className="logoNav">
@@ -168,7 +166,7 @@ function NimmGame() {
                 </div>
                 
             </main>
-        </body>
+        </>
       );
 }
 
@@ -223,7 +221,6 @@ function Computer(setRefresh, refresh) {
 
 
 function PlayAgain(){
-    playstate = "Play Again"
     playing = false;
     if(playerwin === true) {
         cs="You Win.";

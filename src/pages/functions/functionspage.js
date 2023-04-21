@@ -30,7 +30,7 @@ function FunctionsPage() {
   };
 
   return (
-    <body>
+    <>
       <nav>
         <div className="navbar">
           <div className="logoNav">
@@ -114,7 +114,7 @@ function FunctionsPage() {
             </div>
         </div>
       </main>
-    </body>
+    </>
   );
 }
 

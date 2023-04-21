@@ -2,7 +2,7 @@ import "../../css/App.css";
 
 function SillyGoose() {
   return (
-    <body>
+    <>
       <header style={{ paddingLeft: "1%" }}>
         <h1>
           <span class="text-orange">public class</span>{" "}
@@ -75,7 +75,7 @@ function SillyGoose() {
         </ul>
         {"}"}
       </header>
-    </body>
+    </>
   );
 }
 

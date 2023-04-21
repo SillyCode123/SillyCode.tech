@@ -40,7 +40,7 @@ function Dashboard() {
   }
 
   return (
-    <body>
+    <>
       <nav>
         <div className="navbar">
           <div className="logoNav">
@@ -85,7 +85,7 @@ function Dashboard() {
       <main id="content">
         <span className="middle">Nothing to Display. Please Login.</span>
       </main>
-    </body>
+    </>
   );
 }
 

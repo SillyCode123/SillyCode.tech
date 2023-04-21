@@ -12,7 +12,7 @@ function Index() {
   };
 
   return (
-    <body>
+    <>
       <div className="navbar">
         <div className="logoNav">
           <motion.a
@@ -48,26 +48,24 @@ function Index() {
           </motion.button>
         </div>
       </div>
-      <br />
-      <main>
+      <br/>
+      <main style={{margin: "0", padding: "0"}}>
         <section className="bgblue">
-
           <div className="curve"></div>
         </section>
         <section>
           <h1>IN WORK</h1>
-          <p>
-            At the moment there are only a few <motion.a
+          <span style={{marginLeft: "5%", marginRight: "5%"}}>
+            At the moment there are only a few 
+            <motion.a
               href="/functions" style={{color:"blue"}} whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.9 }}>functions
+              whileTap={{ scale: 0.9 }}> functions
             </motion.a> for fun.
-            <br/>
-            IN WORK
-          </p>
+          </span>
         </section>
         <br/>
       </main>
-    </body>
+    </>
   );
 }
 

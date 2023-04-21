@@ -1,12 +1,9 @@
-import logo from "../../img/SillyCoder.png";
 import "../../css/App.css";
 import { motion } from "framer-motion";
+import MenuBar from "../componets/MenuBar";
+import { isMobile } from "react-device-detect";
 
 function SillyGoose() {
-  const dash = () => {
-    window.location = "../dashboard";
-  };
-
   const git = () => {
     Object.assign(document.createElement("a"), {
       target: "_blank",
@@ -32,166 +29,256 @@ function SillyGoose() {
   const mem = () => {
     window.location = "/devteam";
   };
+  if (isMobile) {
+    return (
+      <>
+        <MenuBar />
+        <main className="grid">
+          <motion.h1
+            className="middle"
+            style={{ color: "orange", fontSize: 60 }}
+          >
+            SillyGoose
+          </motion.h1>
 
-  return (
-    <body>
-      <nav id="north">
-        <div className="navbar">
-          <div className="logoNav">
-            <motion.a
-              href="index"
+          <motion.h1 style={{ fontSize: "3em" }} className="middle">
+            <span className="blue">Links</span>
+          </motion.h1>
+
+          <div className="middle">
+            <motion.button
+              className="devTeamBtn"
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
-              className="logoBtn"
+              style={{ fontSize: 20 }}
+              onClick={git}
             >
-              <img
-                className="logo"
-                alt=""
-                src={logo}
-                width="150px"
-                height="150px"
-              ></img>
-            </motion.a>
-
-            <motion.button
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.9 }}
-              className="DashboardBtn"
-              onClick={dash}
-            >
-              Dashboard
-            </motion.button>
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.9 }}
-              className="aboutusbtn"
-              onClick={mem}
-            >
-              About Us
+              Github
             </motion.button>
           </div>
-        </div>
-      </nav>
 
-      <main className="grid">
-        <motion.button
-          whileHover={{ scale: 1.1 }}
-          whileTap={{ scale: 0.9 }}
-          className="btngreenDev"
-          onClick={mem}
-        >
-          Back to Members
-        </motion.button>
-        <motion.h1 className="middle" style={{ color: "orange", fontSize: 40 }}>
-          SillyGoose
-        </motion.h1>
-        <div className="right">
+          <motion.h1
+            className="middle"
+            style={{ color: "Green", fontSize: "3em" }}
+          >
+            Languages
+          </motion.h1>
+
+          <div style={{ paddingLeft: "20%" }}>
+            <motion.h1 style={{ color: "Yellow", fontSize: 40 }}>
+              <span className="niceBlue">[1]</span> Java
+            </motion.h1>
+            <motion.h1 style={{ color: "Yellow", fontSize: 40 }}>
+              <span className="niceBlue">[2]</span>JavaScript
+            </motion.h1>
+            <motion.h1 style={{ color: "Yellow", fontSize: 40 }}>
+              <span className="niceBlue">[3]</span> C
+            </motion.h1>
+            <motion.h1 style={{ color: "Yellow", fontSize: 40 }}>
+              <span className="niceBlue">[4]</span> C++
+            </motion.h1>
+            <motion.h1 style={{ color: "Yellow", fontSize: 40 }}>
+              <span className="niceBlue">[5]</span> Python
+            </motion.h1>
+          </div>
+
+          <motion.h1 className="middle" style={{ fontSize: "3em" }}>
+            <span className="red">Work</span>
+          </motion.h1>
+
+          <div>
+            <h1 className="middle">
+              <motion.a
+                className="overflow"
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
+                style={{
+                  color: "darkgoldenrod",
+                  fontSize: 40,
+                  textDecoration: "none",
+                }}
+                href="../index"
+              >
+                This Site
+              </motion.a>
+            </h1>
+
+            <h1 className="middle">
+              <motion.a
+                className="overflow"
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
+                style={{
+                  color: "darkgoldenrod",
+                  fontSize: 40,
+                  textDecoration: "none",
+                  cursor: "pointer",
+                }}
+                onClick={oos}
+                cxcv
+              >
+                Our Old Site
+              </motion.a>
+            </h1>
+
+            <h1 className="middle">
+              <motion.a
+                className="overflow"
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
+                style={{
+                  color: "darkgoldenrod",
+                  fontSize: 40,
+                  textDecoration: "none",
+                }}
+                href="https://discord.gg/DKRcNd7Hpn"
+                target={"_blank"}
+              >
+                Our Discord
+              </motion.a>
+            </h1>
+          </div>
+          <br />
+          <div className="middle">
+            <motion.button
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+              className="btngreenDev"
+              onClick={mem}
+            >
+              Back to Members
+            </motion.button>
+          </div>
+        </main>
+      </>
+    );
+  } else {
+    return (
+      <>
+        <MenuBar />
+        <main className="grid">
           <motion.button
-            className="devTeamBtn"
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
-            style={{ fontSize: 20 }}
-            onClick={sw}
+            className="btngreenDev"
+            onClick={mem}
           >
-            Switch
+            Back to Members
           </motion.button>
-        </div>
-        <motion.h1 className="" style={{ color: "Green", fontSize: 40 }}>
-          Languages
-        </motion.h1>
-
-        <motion.h1 className="middle">
-          <span className="blue">Links</span>
-        </motion.h1>
-
-        <motion.h1 className="middle" style={{ fontSize: 40 }}>
-          <span className="red">Work</span>
-        </motion.h1>
-        <div>
-          <motion.h1 style={{ color: "Yellow", fontSize: 40 }}>
-            <span className="niceBlue">[1]</span> Java
-          </motion.h1>
-          <motion.h1 style={{ color: "Yellow", fontSize: 40 }}>
-            <span className="niceBlue">[2]</span> JavaScript
-          </motion.h1>
-          <motion.h1 style={{ color: "Yellow", fontSize: 40 }}>
-            <span className="niceBlue">[3]</span> C
-          </motion.h1>
-          <motion.h1 style={{ color: "Yellow", fontSize: 40 }}>
-            <span className="niceBlue">[4]</span> HTML+CSS
-          </motion.h1>
-          <motion.h1 style={{ color: "Yellow", fontSize: 40 }}>
-            <span className="niceBlue">[5]</span> Python
-          </motion.h1>
-        </div>
-        <div className="middle">
-          <motion.button
-            className="devTeamBtn"
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.9 }}
-            style={{ fontSize: 20 }}
-            onClick={git}
+          <motion.h1
+            className="middle"
+            style={{ color: "orange", fontSize: 40 }}
           >
-            Github
-          </motion.button>
-        </div>
-
-        <div>
-          <h1 className="middle">
-            <motion.a
-              className="overflow"
+            SillyGoose
+          </motion.h1>
+          <div className="right">
+            <motion.button
+              className="devTeamBtn"
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
-              style={{
-                color: "darkgoldenrod",
-                fontSize: 40,
-                textDecoration: "none",
-              }}
-              href="../index"
+              style={{ fontSize: 20 }}
+              onClick={sw}
             >
-              This Site
-            </motion.a>
-          </h1>
+              Switch
+            </motion.button>
+          </div>
+          <motion.h1 className="" style={{ color: "Green", fontSize: 40 }}>
+            Languages
+          </motion.h1>
 
-          <h1 className="middle">
-            <motion.a
-              className="overflow"
+          <motion.h1 className="middle">
+            <span className="blue">Links</span>
+          </motion.h1>
+
+          <motion.h1 className="middle" style={{ fontSize: 40 }}>
+            <span className="red">Work</span>
+          </motion.h1>
+          <div>
+            <motion.h1 style={{ color: "Yellow", fontSize: 40 }}>
+              <span className="niceBlue">[1]</span> Java
+            </motion.h1>
+            <motion.h1 style={{ color: "Yellow", fontSize: 40 }}>
+              <span className="niceBlue">[2]</span> JavaScript
+            </motion.h1>
+            <motion.h1 style={{ color: "Yellow", fontSize: 40 }}>
+              <span className="niceBlue">[3]</span> C
+            </motion.h1>
+            <motion.h1 style={{ color: "Yellow", fontSize: 40 }}>
+              <span className="niceBlue">[4]</span> HTML+CSS
+            </motion.h1>
+            <motion.h1 style={{ color: "Yellow", fontSize: 40 }}>
+              <span className="niceBlue">[5]</span> Python
+            </motion.h1>
+          </div>
+          <div className="middle">
+            <motion.button
+              className="devTeamBtn"
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
-              style={{
-                color: "darkgoldenrod",
-                fontSize: 40,
-                textDecoration: "none",
-                cursor: "pointer",
-              }}
-              onClick={oos}
-              cxcv
+              style={{ fontSize: 20 }}
+              onClick={git}
             >
-              Our Old Site
-            </motion.a>
-          </h1>
+              Github
+            </motion.button>
+          </div>
 
-          <h1 className="middle">
-            <motion.a
-              className="overflow"
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.9 }}
-              style={{
-                color: "darkgoldenrod",
-                fontSize: 40,
-                textDecoration: "none",
-              }}
-              href="https://discord.gg/DKRcNd7Hpn"
-              target={"_blank"}
-            >
-              Our Discord
-            </motion.a>
-          </h1>
-        </div>
-        <br />
-      </main>
-    </body>
-  );
+          <div>
+            <h1 className="middle">
+              <motion.a
+                className="overflow"
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
+                style={{
+                  color: "darkgoldenrod",
+                  fontSize: 40,
+                  textDecoration: "none",
+                }}
+                href="../index"
+              >
+                This Site
+              </motion.a>
+            </h1>
+
+            <h1 className="middle">
+              <motion.a
+                className="overflow"
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
+                style={{
+                  color: "darkgoldenrod",
+                  fontSize: 40,
+                  textDecoration: "none",
+                  cursor: "pointer",
+                }}
+                onClick={oos}
+                cxcv
+              >
+                Our Old Site
+              </motion.a>
+            </h1>
+
+            <h1 className="middle">
+              <motion.a
+                className="overflow"
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
+                style={{
+                  color: "darkgoldenrod",
+                  fontSize: 40,
+                  textDecoration: "none",
+                }}
+                href="https://discord.gg/DKRcNd7Hpn"
+                target={"_blank"}
+              >
+                Our Discord
+              </motion.a>
+            </h1>
+          </div>
+          <br />
+        </main>
+      </>
+    );
+  }
 }
 
 export default SillyGoose;

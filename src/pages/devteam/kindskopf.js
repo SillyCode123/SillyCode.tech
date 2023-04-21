@@ -20,7 +20,7 @@ function Kindskopf() {
   };
 
   return (
-    <body>
+    <>
       <nav id="north">
         <div className="navbar">
           <div className="logoNav">
@@ -120,7 +120,7 @@ function Kindskopf() {
                 fontSize: 40,
                 textDecoration: "none",
               }}
-              href=""
+              href="https://discord.gg/DKRcNd7Hpn"
               target={"_blank"}
             >
               Our Discord
@@ -130,7 +130,7 @@ function Kindskopf() {
 
         <br />
       </main>
-    </body>
+    </>
   );
 }
 
