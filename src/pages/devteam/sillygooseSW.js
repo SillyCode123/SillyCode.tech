@@ -37,11 +37,11 @@ function SillyGoose() {
             <br />
             <span class="text-orange">public void </span>{" "}
             <span class="text-green"> Coden</span>(){"{"}
-            <span class="text-grey">{"//Leben"}</span>
+            <span class="text-grey">{" //Leben"}</span>
             <ul>
               <br />
               <span class="text-light-blue">
-                String[1]<span class="text-yellow"> download</span>{" "}
+                String[1]<span class="text-yellow"> git</span>{" "}
               </span>
               =
               <a href="https://github.com/SillyCodeDev">
@@ -56,7 +56,7 @@ function SillyGoose() {
               <br />
               <span class="text-light-blue">String[3]</span>{" "}
               <span class="text-yellow">language</span> ={" "}
-              <span class="text-dark-green"> "C#"</span>;
+              <span class="text-dark-green"> "C"</span>;
               <br />
               <span class="text-light-blue">String[4]</span>{" "}
               <span class="text-yellow">language</span> ={" "}
@@ -64,7 +64,7 @@ function SillyGoose() {
               <br />
               <span class="text-light-blue">String[5]</span>{" "}
               <span class="text-yellow">language</span> ={" "}
-              <span class="text-dark-green"> "CSS/HTML"</span>;
+              <span class="text-dark-green"> "C++"</span>;
               <br />
               <span class="text-light-blue">String[6]</span>{" "}
               <span class="text-yellow">language</span> ={" "}
