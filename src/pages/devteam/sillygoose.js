@@ -8,7 +8,7 @@ function SillyGoose() {
     Object.assign(document.createElement("a"), {
       target: "_blank",
       rel: "noopener noreferrer",
-      href: "https://github.com/SillyCodeDev",
+      href: "https://github.com/SillyGoose123",
     }).click();
   };
 
