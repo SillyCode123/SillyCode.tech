@@ -69,6 +69,17 @@ function Kindskopf() {
             Github
           </motion.button>
         </div>
+       <div className="middle">
+          <motion.button
+            className="devTeamBtn"
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
+            style={{ fontSize: 20 }}
+            onClick={git}
+          >
+            Email
+          </motion.button>
+        </div>
 
         <div>
           <h1 className="middle">
