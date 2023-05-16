@@ -1,1 +1,2 @@
-That's the SillyCode.tech Website Code.
+## SillyCode.tech
+Hi this is our website code https://sillycode.tech/ it looks pretty shitty
