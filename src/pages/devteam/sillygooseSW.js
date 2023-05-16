@@ -44,7 +44,7 @@ function SillyGoose() {
                 String[1]<span class="text-yellow"> git</span>{" "}
               </span>
               =
-              <a href="https://github.com/SillyCodeDev">
+              <a href="https://github.com/SillyGoose123">
                 {" "}
                 <span class="link-dark-green">"Github"</span>
               </a>
