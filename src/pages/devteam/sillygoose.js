@@ -5,21 +5,11 @@ import { isMobile } from "react-device-detect";
 
 function SillyGoose() {
   const git = () => {
-    Object.assign(document.createElement("a"), {
-      target: "_blank",
-      rel: "noopener noreferrer",
-      href: "https://github.com/SillyGoose123",
-    }).click();
+    window.open("https://github.com/SillyGoose123");
   };
 
   const oos = () => {
-    if (
-      window.confirm(
-        "Leave this site to https://adorable-dango-7cc7d0.netlify.app/ ?"
-      )
-    ) {
-      window.location.replace("https://adorable-dango-7cc7d0.netlify.app/");
-    }
+    if (window.confirm("Leave this site to https://adorable-dango-7cc7d0.netlify.app/ ?")) window.location.replace("https://adorable-dango-7cc7d0.netlify.app/");
   };
 
   const sw = () => {
@@ -29,6 +19,7 @@ function SillyGoose() {
   const mem = () => {
     window.location = "/devteam";
   };
+  
   if (isMobile) {
     return (
       <>
@@ -115,7 +106,6 @@ function SillyGoose() {
                   cursor: "pointer",
                 }}
                 onClick={oos}
-                cxcv
               >
                 Our Old Site
               </motion.a>

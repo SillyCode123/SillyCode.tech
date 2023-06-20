@@ -1,4 +1,5 @@
 import "../../css/App.css";
+import GoBack from "../componets/GoHome";
 import MenuBar from "../componets/MenuBar";
 import { motion } from "framer-motion";
 
@@ -74,6 +75,7 @@ function FunctionsPage() {
             </div>
         </div>
       </main>
+      <GoBack/>
     </>
   );
 }

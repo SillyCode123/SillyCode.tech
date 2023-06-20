@@ -12,14 +12,23 @@ function Index() {
           <div className="curve"></div>
         </section>
         <section>
-          <h1>IN WORK</h1>
-          <span style={{marginLeft: "5%", marginRight: "5%"}}>
-            At the moment there are only a few 
-            <motion.a
-              href="/functions" style={{color:"blue"}} whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.9 }}> functions
-            </motion.a> for fun.
-          </span>
+          <h1>Functions</h1>
+          {/*
+          <motion.button
+            className="devTeamBtn"
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
+            style={{ color: "", fontSize: 20 }}
+            onClick={() => window.location = "/software"}
+          >Software</motion.button>
+          */}
+          <motion.button
+            className="devTeamBtn"
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
+            style={{ color: "", fontSize: 20 }}
+            onClick={() => window.location = "/functions"}
+          >Fun Functions</motion.button>
         </section>
         <br/>
       </main>

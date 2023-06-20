@@ -1,4 +1,5 @@
 import MenuBar from "../componets/MenuBar";
+import GoHome from "../componets/GoHome";
 import "../../css/App.css";
 import { motion } from "framer-motion";
 
@@ -8,7 +9,7 @@ function DevTeam() {
     <>
       <MenuBar/>    
       <main>
-        <div className="middle" style={{ fontSize: 40, paddingTop:"5%"}}>
+        <div className="middle" style={{ fontSize: 40, paddingTop:"3%"}}>
           <motion.h1 style={{ color: "orange" }}>
             Links
           </motion.h1>
@@ -31,19 +32,17 @@ function DevTeam() {
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
             style={{ color: "", fontSize: 20 }}
-            onClick={() => window.open("https://github.com/sillycode123")}
+            onClick={() => window.location = "/software"}
           >
-            Github
+            Our Software
           </motion.button>
         </div>
-       
+        <br/>
         <div className="middle" style={{ fontSize: 40 }}>
           <motion.h1 style={{ color: "orange" }}>
             Members
           </motion.h1>
         </div>
-        
-        <br />
         <div className="middle">
           <motion.button
             className="devTeamBtn"
@@ -68,17 +67,7 @@ function DevTeam() {
           </motion.button>
         </div>
         <br />
-        <div className="middle">
-          <motion.button
-            className="btngreenDev"
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.9 }}
-            style={{ color: "", fontSize: 20, position: "absolute", bottom: "2%"}}
-            onClick={() => window.location = "/"}
-          >
-            Go Back
-          </motion.button>
-        </div>
+        <GoHome/>
       </main>
     </>
   );

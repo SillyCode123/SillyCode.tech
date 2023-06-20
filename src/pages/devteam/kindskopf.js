@@ -5,15 +5,7 @@ import { motion } from "framer-motion";
 function Kindskopf() {
 
   const git = () => {
-    Object.assign(document.createElement("a"), {
-      target: "_blank",
-      rel: "noopener noreferrer",
-      href: "https://github.com/Kindskopf123",
-    }).click();
-  };
-
-  const mem = () => {
-    window.location = "/devteam";
+    window.open("https://github.com/SillyGoose123");
   };
 
   return (
@@ -25,7 +17,7 @@ function Kindskopf() {
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.9 }}
           className="btngreenDev"
-          onClick={mem}
+          onClick={() => window.location = "/devteam"}
         >
           Back to Members
         </motion.button>

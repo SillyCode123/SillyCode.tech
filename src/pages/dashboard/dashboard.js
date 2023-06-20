@@ -80,10 +80,8 @@ function Dashboard() {
           </div>
         </div>
       </nav>
-      <br />
-
-      <main id="content">
-        <span className="middle">Nothing to Display. Please Login.</span>
+      <main style={{padding: "6%"}} id="content">
+        <span id="kot" className="middle">Nothing to Display. Please Login.</span>
       </main>
     </>
   );
@@ -107,8 +105,7 @@ function buildController() {
 
 function clearContent() {
     try {
-        document.querySelector("br").remove();
-        document.querySelector("span").remove();
+        document.querySelector("#kot").remove();
     } catch (error) {
         
     }
@@ -137,19 +134,6 @@ function login() {
     .then(response => {
         const {id, username, avatar ,discriminator} = response
         buildHello(id, username, avatar ,discriminator);
-        if(window.confirm("Use cookie?")){
-          clearContent();
-          fetch(api + '/create/cookie', {
-              headers: {
-                  authorization: "Bearer" + process.env.REACT_APP_Token,
-                  data: response + "sss",
-              },
-          })
-          .then(result => result.json())
-          .then(response => {
-              console.log(response);
-          }).catch(console.error);
-        }
     }).catch(console.error); 
 
     buttonText = "Logout";
@@ -158,7 +142,6 @@ function login() {
 
 function buildHello(id, username, avatar ,discriminator) {
   clearContent(); 
-  document.getElementById("content").style = "padding: 2%; padding-top: 10%;";
 
   //go the div where we write in
   let body = document.getElementById("content");
@@ -169,8 +152,7 @@ function buildHello(id, username, avatar ,discriminator) {
   h1.className = "middle";
 
   //setup the link to the discord avatar picture and create the img
-  let avaurl =
-    "https://cdn.discordapp.com/avatars/" + id + "/" + avatar + ".jpg";
+  let avaurl = "https://cdn.discordapp.com/avatars/" + id + "/" + avatar + ".jpg";
   let img = document.createElement("img");
   img.src = avaurl;
   img.alt = "";
@@ -193,7 +175,7 @@ function buildHello(id, username, avatar ,discriminator) {
   body.appendChild(h1);
   h1.appendChild(img);
   h1.appendChild(span);
-  h1.appendChild(span1);
+  if(discriminator != "0") h1.appendChild(span1);
   body.appendChild(document.createElement("br"))
   body.appendChild(test);
 
