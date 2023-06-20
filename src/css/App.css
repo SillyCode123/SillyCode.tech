@@ -160,11 +160,7 @@ nav {
 
 /*ANCHOR - Texts */
 
-.text {
-  display: flex;
-  justify-content: center;
-  padding-top: 180px;
-}
+
 
 .MainText {
   display: flex;
@@ -199,11 +195,14 @@ nav {
 /*ANCHOR - Buttons */
 
 .aboutusbtn {
+  border-radius: 50px;
+  width: 120px;
+  height: 60px;
+  border: none;
+  background: linear-gradient(10deg, #00447b, #008cff);
+  font-size: 1.2rem; /* hinzugefügt, um die Schriftgröße anzupassen */
   position: absolute;
-  top: 29px;
   right: 210px;
-  border: #101315 5px;
-  border-radius: 5px;
 }
 
 .logoNav {

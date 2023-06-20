@@ -4,28 +4,45 @@ import { motion } from "framer-motion";
 
 
 function DevTeam() {
-  const sg = () => {
-    window.location = "/devteam/sillygoose";
-  };
-
-
-  const kd = () => {
-    window.location = "/devteam/kindskopf";
-  };
-
-  const gb = () => {
-    window.location = "/";
-  };
-
   return (
     <>
       <MenuBar/>    
       <main>
-        <div style={{ fontSize: 40 }}>
-          <motion.h1 className="text" style={{ color: "orange" }}>
+        <div className="middle" style={{ fontSize: 40, paddingTop:"5%"}}>
+          <motion.h1 style={{ color: "orange" }}>
+            Links
+          </motion.h1>
+        </div>
+        <div className="middle">
+          <motion.button
+            className="devTeamBtn"
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
+            style={{ color: "", fontSize: 20 }}
+            onClick={() => window.open("https://github.com/sillycode123")}
+          >
+            Github
+          </motion.button>
+        </div> 
+        <br/>
+        <div className="middle">
+          <motion.button
+            className="devTeamBtn"
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
+            style={{ color: "", fontSize: 20 }}
+            onClick={() => window.open("https://github.com/sillycode123")}
+          >
+            Github
+          </motion.button>
+        </div>
+       
+        <div className="middle" style={{ fontSize: 40 }}>
+          <motion.h1 style={{ color: "orange" }}>
             Members
           </motion.h1>
         </div>
+        
         <br />
         <div className="middle">
           <motion.button
@@ -33,7 +50,7 @@ function DevTeam() {
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
             style={{ color: "", fontSize: 20 }}
-            onClick={sg}
+            onClick={() => window.location = "/devteam/sillygoose"}
           >
             SillyGoose
           </motion.button>
@@ -45,7 +62,7 @@ function DevTeam() {
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
             style={{ color: "", fontSize: 20 }}
-            onClick={kd}
+            onClick={() => window.location = "/devteam/kindskopf"}
           >
             Kindskopf
           </motion.button>
@@ -56,8 +73,8 @@ function DevTeam() {
             className="btngreenDev"
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
-            style={{ color: "", fontSize: 20 }}
-            onClick={gb}
+            style={{ color: "", fontSize: 20, position: "absolute", bottom: "2%"}}
+            onClick={() => window.location = "/"}
           >
             Go Back
           </motion.button>
