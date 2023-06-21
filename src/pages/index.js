@@ -14,7 +14,7 @@ function Index() {
         <div style={{position: "absolute", left:"45%" , top: "50px"}}>
           <section>
             <h1>Functions</h1>
-            {/*
+
             <motion.button
               className="devTeamBtn"
               whileHover={{ scale: 1.1 }}
@@ -22,7 +22,7 @@ function Index() {
               style={{ color: "", fontSize: 20 }}
               onClick={() => window.location = "/software"}
             >Software</motion.button>
-            */}
+            <br/>
             <motion.button
               className="devTeamBtn"
               whileHover={{ scale: 1.1 }}

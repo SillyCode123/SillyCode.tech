@@ -1,5 +1,4 @@
 function addContent(type){
-    var json;
     switch (type) {
       default:
         return(<>

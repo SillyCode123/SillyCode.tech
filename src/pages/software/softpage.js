@@ -2,54 +2,35 @@ import "../../css/App.css";
 import React, {useEffect} from "react";
 import GoBack from "../componets/GoHome";
 import MenuBar from "../componets/MenuBar";
-import { isAndroid, isIOS} from "react-device-detect";
+import { isAndroid, isIOS, isMobile} from "react-device-detect";
 import addContent from "./contentCreator";
 
 //vars
 var content = [];
 function SoftPage() {
   const [refresh, setRefresh] = React.useState(0);
-  var filters = <></>;
-  if(isAndroid){
-    filters = (
-      <>
-        <input type="checkbox" onClick={() => {update(); setRefresh(refresh + 1)}} id="showAndroid" />
-        Android
-        <br/>
-        <input type="checkbox" onClick={() => {update(); setRefresh(refresh + 1)}} id="showDesktop" />
-        Desktop 
-        <br/>
-        <input type="checkbox" onClick={() => {update(); setRefresh(refresh + 1)}} id="showIos" />
-        Ios
-      </>)
-    content[0] = addContent("Android");
-   
-    
-  } else if(isIOS){
-    filters = (
-      <>
-        <input type="checkbox" onClick={() => {update(); setRefresh(refresh + 1)}} id="showIos" />
-        Ios
-        <br/>
-        <input type="checkbox" onClick={() => {update(); setRefresh(refresh + 1)}} id="showAndroid" />
-        Android
-        <br/>
-        <input type="checkbox" onClick={() => {update(); setRefresh(refresh + 1)}} id="showDesktop" />
-        Desktop
-      </>)
-  } else {    
-    filters = (
-      <>    
-        <input type="checkbox" defaultChecked={true} onClick={() => {update(); setRefresh(refresh + 1)}} id="showDesktop" />
-        Desktop
-        <br/>
-        <input type="checkbox" onClick={() => {update(); setRefresh(refresh + 1)}} id="showAndroid" />
-        Android
-        <br/>
-        <input type="checkbox" onClick={() => {update(); setRefresh(refresh + 1)}} id="showIos" />
-        Ios
-      </>)
+
+  // get order
+  var order = getOrder();
+
+  //create content and create filter
+  var filters = [<></>,<></>,<></>];
+  for (var i = 0; i < filters.length; i++) {
+    if(i == 0){
+      filters[i] = (
+        <>
+          <input type="checkbox" defaultChecked={true} onClick={() => {update(); setRefresh(refresh + 1)}} id={"show" + order[i]}/>
+          {order[i]}
+        </>);
+    } else {
+      filters[i] = (
+        <>
+          <input type="checkbox" onClick={() => {update(); setRefresh(refresh + 1)}} id={"show" + order[i]} />
+          {order[i]}
+        </>);
+    } 
   }
+ 
 
   useEffect(() => {
     if (refresh == 0) {
@@ -57,97 +38,105 @@ function SoftPage() {
       setRefresh(refresh +1)
     }
   });
-
-  //ANCHOR jsx
-  return (
-    <>
-      <MenuBar/>
-      <br/><br/><br/>
-      <main style={{paddingRight:"10%", paddingLeft:"10%"}}>
-          <div>{content[0]}</div>
-          <div>{content[1]}</div>
-          <div>{content[2]}</div>
-      </main>
-      <div style={{position: "absolute", top:"0%", bottom:"0", left:"1%", right:"90%",borderRight:"white dotted"}}>
-        <br/><br/>
-        <form style={{paddingTop:"15%"}}>
-          <div style={{marginRight:"10%"}}>
-            <span className="middle" style={{fontSize: "25px"}}>Filter</span>
-            {filters}
+  if(!isMobile){
+    //ANCHOR jsx for pc
+    return (
+      <>
+        <MenuBar/>
+        <br/><br/><br/>
+        <main style={{paddingLeft:"10%"}}>
+            <div>{content[0]}</div>
+            <div>{content[1]}</div>
+            <div>{content[2]}</div>
+        </main>
+        <div style={{position: "absolute", top:"0%", bottom:"0", right:"auto", left:"10px", borderRight:"white dotted"}}>
+          <br/><br/>
+          <form style={{paddingTop:"15%", paddingRight:"10px"}}>
+              <span className="middle" style={{fontSize: "25px", borderBottom:"white solid"}}>Filter</span>
+              <div>{filters[0]}</div>
+              <div>{filters[1]}</div>
+              <div>{filters[2]}</div>
+          </form>
           </div>
-        </form>
-      </div>
-      <GoBack/>
-    </>
-  )
+        <GoBack/>
+      </>
+    )
+  } else {
+    //ANCHOR jsx for mobile
+    return (
+      <>
+        <MenuBar/>
+        <br/><br/><br/>
+        <main style={{paddingLeft:"10%"}}>
+          Not available at the moment for mobile.
+        </main>
+        <GoBack/>
+      </>
+    )
+    }
 }
 
 //ANCHOR Update
 function update() {
   content = [];
-  var filter = [false,false,false]; 
-  try {
-    filter[0] = document.getElementById("showDesktop").checked;
-  } catch (error) {
-    console.warn(error)
-  }
-  
-  try{
-    filter[1] = document.getElementById("showAndroid").checked;
-  } catch (error) {
-    console.warn(error)
-  }
-  
-  try{
-    filter[2] = document.getElementById("showIos").checked;
-  } catch (error) {
-    console.warn(error)
+  // witch platform
+  var plattform = "Desktop";
+  if(isAndroid){
+   plattform = "Android"
+  } else if(isIOS){
+    plattform = "Ios"
   }
 
-  if(isAndroid){
-    if(filter[1]){
-      content[0] = addContent("Android")
-    } 
-    
-    if(filter[0]){
-      content[1] = addContent("Desktop")
+  //get order
+  var order = getOrder();
+
+  //create content and create filter
+  var filter = [false, false, false]
+  for (var i = 0; i < order.length; i++) {
+    filter[i] = getChecked("show" + order[i]);
+    if(filter[i]){
+      content[i] = addContent(order[i])
     }
+  }
   
-    if(filter[2]){
-      content[2] = addContent("Ios")
-    }
-  } else if (isIOS){
-    if(filter[2]){
-      content[0] = addContent("Ios")
-    }
-    if(filter[1]){
-      content[1] = addContent("Android")
-    } 
-    
-    if(filter[0]){
-      content[2] = addContent("Desktop")
-    }
-  } else {  
-    if(filter[0]){
-      content[0] = addContent("Desktop") 
-    }
-  
-    if(filter[1]){
-      content[1] = addContent("Android")
-    } 
-    
-    if(filter[2]){
-      content[2] = addContent("Ios")
-    }
-  }   
- 
-  if(filter[0] && filter[1]){
+  if(filter[0] && filter[1] || filter[2]){
     content[0] = <>{content[0]} <hr/></>
   }
-
+  
   if(filter[1] && filter[2]){
     content[1] = <>{content[1]} <hr/></>
   }
+}
+
+function getChecked(id) {
+  try {
+    return document.getElementById(id).checked;
+  } catch (error) {
+    console.warn(error)
+  }
+
+}
+
+function getOrder(){
+   // witch platform
+   var plattform = "Desktop";
+   if(isAndroid){
+    plattform = "Android"
+   } else if(isIOS){
+     plattform = "Ios"
+   }
+ 
+   //Get the oder
+   switch(plattform){
+     case "Desktop":
+      return [plattform,"Android","Ios" ]
+ 
+     case "Android":
+      return [plattform,"Desktop", "Ios"]
+ 
+     case "Ios":
+      return [plattform,"Android","Desktop" ]
+   }
 }
 
 
