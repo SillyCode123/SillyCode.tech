@@ -7,9 +7,6 @@ var token_type = "empty";
 var access_token = "empty";
 var buttonText = "Login"; 
 
-//api
-var api = "https://api.sillycode.tech:2020/";
-
 function Dashboard() {
   const [refresh, setRefresh] = React.useState(0);
 
@@ -175,7 +172,7 @@ function buildHello(id, username, avatar ,discriminator) {
   body.appendChild(h1);
   h1.appendChild(img);
   h1.appendChild(span);
-  if(discriminator != "0") h1.appendChild(span1);
+  if(discriminator !== "0") h1.appendChild(span1);
   body.appendChild(document.createElement("br"))
   body.appendChild(test);
 
