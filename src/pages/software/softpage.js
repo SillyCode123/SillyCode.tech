@@ -58,6 +58,7 @@ function SoftPage() {
               <div>{filters[2]}</div>
           </form>
           </div>
+          //TODO mittig machen
         <GoBack/>
       </>
     )
