@@ -4,7 +4,7 @@ class Android extends React.Component {
     render() {
         return (
             <>
-                android           
+                <h1>android</h1>           
             </>
         )
     }

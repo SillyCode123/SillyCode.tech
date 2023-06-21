@@ -25,6 +25,8 @@ function SoftPage() {
         <input type="checkbox" onClick={() => {update(); setRefresh(refresh + 1)}} id="showIos" />
         Ios
       </>)
+
+    
   } else if(isIOS){
     filters = (
       <>
@@ -55,8 +57,12 @@ function SoftPage() {
     <>
         <MenuBar/>
         <br/><br/><br/>
-        <main className="middle">
-          {content}
+        <main style={{paddingLeft:"45%"}}>
+          {content[0]}
+          <br/>
+          {content[1]}
+          <br/>
+          {content[2]}
         </main>
         <form style={{position: "absolute", top: "12%"}}>
         <span className="middle" style={{fontSize: "25px"}}>Filter</span>
@@ -68,22 +74,63 @@ function SoftPage() {
 }
 
 function update() {
-  content = null;
-  console.log(document.getElementById("showDesktop"));
-  /*
-  if(document.getElementById("showAndroid").ariaChecked){
-    content += <Android/>
-  } 
-
-  if(document.getElementById("showIos").ariaChecked){
-    content += <Ios/>
+  content = [];
+  var filter = [false,false,false]; 
+  try {
+    filter[0] = document.getElementById("showDesktop").checked;
+  } catch (error) {
+    console.error(error)
   }
-
-  if(document.getElementById("showDesktop").ariaChecked){
-    content += <Desktop/>
+  
+  try{
+    filter[1] = document.getElementById("showAndroid").checked;
+  } catch (error) {
+    console.error(error)
   }
-  */
+  
+  try{
+    filter[2] = document.getElementById("showIos").checked;
+  } catch (error) {
+    console.error(error)
+  }
+     
+    if(isAndroid){
+      if(filter[1]){
+        content[0] = <Android/>
+      } 
+      
+      if(filter[0]){
+        content[1] = <Desktop/>
+      }
+    
+      if(filter[2]){
+        content[2] = <Ios/>
+      }
+    } else if (isIOS){
+      if(filter[2]){
+        content[0] = <Ios/>
+      }
+      if(filter[1]){
+        content[1] = <Android/>
+      } 
+      
+      if(filter[0]){
+        content[2] = <Desktop/>
+      }
+    } else {  
+      if(filter[0]){
+        content[0] = <Desktop/> 
+      }
+    
+      if(filter[1]){
+        content[1] = <Android/>
+      } 
+      
+      if(filter[2]){
+        content[2] = <Ios/>
+      }
+    }    
+  
 }
-
 
 export default SoftPage;
