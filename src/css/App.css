@@ -180,7 +180,6 @@ nav {
   grid-template-columns: auto auto auto;
   padding-left: 1%;
   padding-right: 1%;
-  padding-top: 120px;
 }
 
 .grid-around-space {
@@ -190,6 +189,10 @@ nav {
 .overflow{
   overflow-y: hidden;
   overflow-x: hidden;
+}
+
+.clickable:hover{
+  cursor: pointer;
 }
 
 /*ANCHOR - Buttons */
@@ -278,6 +281,15 @@ nav {
   height: 75px;
   border: none;
   background: linear-gradient(10deg, #007b3b, #04cc3d);
+}
+
+.btnGithub{
+  --out-color: #282c34;
+  border-radius: 50px;
+  width: 150px;
+  height: 75px;
+  border: none;
+  background: linear-gradient(10deg, #90511e, #ff7300);
 }
 
 button:hover {

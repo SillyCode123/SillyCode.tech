@@ -81,7 +81,7 @@ function NimmGame() {
       <MenuBar />
       <br />
 
-      <main className="grid">
+      <main className="grid" style={{ paddingTop: "120px"}}>
         <span className="middle" style={{ alignItems: "center" }}>
           {mi}
         </span>
