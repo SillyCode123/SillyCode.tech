@@ -48,6 +48,7 @@ function SoftPage() {
             <div>{content[0]}</div>
             <div>{content[1]}</div>
             <div>{content[2]}</div>
+            <GoBack/>
         </main>
         <div style={{position: "absolute", top:"0%", bottom:"0", right:"auto", left:"10px", borderRight:"white dotted"}}>
           <br/><br/>
@@ -57,9 +58,7 @@ function SoftPage() {
               <div>{filters[1]}</div>
               <div>{filters[2]}</div>
           </form>
-          </div>
-          //TODO mittig machen
-        <GoBack/>
+        </div>
       </>
     )
   } else {
