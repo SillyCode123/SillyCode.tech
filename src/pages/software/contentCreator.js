@@ -2,6 +2,8 @@ import DesktopData from "./json/desktop.json";
 import AndroidData from "./json/android.json";
 import iosData from "./json/ios.json";
 import { motion } from "framer-motion";
+import parse from 'html-react-parser';
+import MenuBar from "./../componets/MenuBar";
 
 function addContent(platform){
     var cur = getJson(platform);
@@ -19,8 +21,10 @@ function addContent(platform){
 
 function createWiget(name, img, plattform) {
     return (<>
-        <div>        
-            <span  className="middle">{name}</span>
+        <div>    
+            <div className="middle"> <img alt="" className="clickable" onClick={() => window.location += "?" + plattform + ":"+ name} c src={img} height="34px"/>   
+            <span className="middle">{name}</span></div> 
+           
             <div className="middle">
                 <div className="grid">
                     <div style={{paddingLeft:"25px", paddingRight:"25px"}}>
@@ -44,7 +48,8 @@ function showAppSite(plattform, name) {
 
     return (
         <>
-            <main>        
+            <MenuBar/>
+            <main style={{paddingTop:"75px"}}>        
                 <h1  className="middle">{name}</h1>
                 <div className="middle">
                     <div className="grid">
@@ -80,7 +85,7 @@ function showAppSite(plattform, name) {
                 <div className="middle"> 
                     <img className="clickable" onClick={() => window.open(json.Download[i])} src={json.Img[i]} />
                 </div>
-                {json.Site[i]}
+                {parse(json.Site[i])}
             </main>
         </>
     )

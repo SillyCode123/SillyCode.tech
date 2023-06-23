@@ -8,7 +8,7 @@ function DevTeam() {
   return (
     <>
       <MenuBar/>    
-      <main>
+      <main style={{paddingTop:"30px"}}>
         <div className="middle" style={{ fontSize: 40, paddingTop:"3%"}}>
           <motion.h1 style={{ color: "orange" }}>
             Links
@@ -24,20 +24,17 @@ function DevTeam() {
           >
             Github
           </motion.button>
-        </div>    <motion.button
+        </div>
+        <br/>    
+        <div className="middle">
+          <motion.button
             className="devTeamBtn"
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
             style={{ color: "", fontSize: 20 }}
             onClick={() => window.location = "/software"}
-          >
-            Our Software
-          </motion.button>
-        <br/>
-        <div className="middle">
-       
+          >Our Software</motion.button>
         </div>
-        <br/>
         <div className="middle" style={{ fontSize: 40 }}>
           <motion.h1 style={{ color: "orange" }}>
             Members
@@ -67,7 +64,17 @@ function DevTeam() {
           </motion.button>
         </div>
         <br />
-        <GoHome/>
+        <div className="middle"  style={{paddingBottom:"50px"}}>
+          <motion.button
+            className="btngreenDev"
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9}}
+            onClick={() => window.location = "/"}
+            >
+            Go Home
+            </motion.button>
+        </div>
+        
       </main>
     </>
   );

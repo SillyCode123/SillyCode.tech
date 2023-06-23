@@ -13,10 +13,10 @@ function Clicks() {
   };
 
   return (
-    <body className="overflow">
+    <>
      <MenuBar/>  
 
-      <div class="clicks-middle">
+      <div className="clicks-middle">
         <motion.h1
           id="clickCounter"
           style={{ paddingRight: "2%", paddingTop: "2.5%" }}
@@ -68,7 +68,7 @@ function Clicks() {
         id="test"
         style={{ fontSize: 30, paddingTop: "5%", paddingLeft: "50%" }}
       ></div>
-    </body>
+    </>
   );
 }
 export default Clicks;
