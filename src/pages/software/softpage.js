@@ -68,18 +68,27 @@ function SoftPage() {
                 <div>{filters[2]}</div>
             </form>
           </div>
-        <div id="pop"></div>
         </>
       )
     } else {
       //ANCHOR jsx for mobile
       return (<>
-        <MenuBar/>
-        <br/><br/><br/>
-        <main style={{paddingLeft:"10%"}}>
-          Not available at the moment for mobile.
-        </main>
-        <GoBack/>
+          <MenuBar/>
+          <br/><br/><br/>
+          <main style={{paddingLeft:"120px"}}>
+              <div>{content[0]}</div>
+              <div>{content[1]}</div>
+              <div>{content[2]}</div>
+          </main>
+          <div style={{position: "absolute", top:"0%", bottom:"0", right:"auto", left:"10px", borderRight:"white dotted"}}>
+            <br/><br/>
+            <form style={{paddingTop:"15%", paddingRight:"10px"}}>
+                <span className="middle" style={{fontSize: "25px", borderBottom:"white solid"}}>Filter</span>
+                <div>{filters[0]}</div>
+                <div>{filters[1]}</div>
+                <div>{filters[2]}</div>
+            </form>
+          </div>
       </>);
     }
   }
@@ -101,7 +110,7 @@ function update() {
     }
   }
   
-  if(filter[0] && filter[1] || filter[2]){
+  if(filter[0] && filter[1] || filter[0] && filter[2] && ! filter[1]){
     content[0] = <>{content[0]} <hr/></>
   }
   

@@ -10,7 +10,7 @@ function addContent(platform){
     var ret = <><h1 className="middle">{platform}</h1><span className="middle">No content availible.</span></>;
     
     if(cur.Name.length > 0){
-        ret = <></>;
+        ret = <><h1 className="middle">{platform}</h1></>;
         for (var index = 0; index < cur.Name.length; index++) {
             if(ret == <></>) ret = <>{createWiget(cur.Name[index], cur.Img[index], platform)}</>
             else ret = <>{ret}{createWiget(cur.Name[index], cur.Img[index], platform)}</>;
@@ -53,7 +53,7 @@ function showAppSite(plattform, name) {
                 <h1  className="middle">{name}</h1>
                 <div className="middle">
                     <div className="grid">
-                        <div style={{paddingLeft:"25px", paddingRight:"25px"}}>
+                        <div style={{padding:"25px"}}>
                         <motion.button
                             className="btnGithub"
                             whileHover={{ scale: 1.1 }}
@@ -62,7 +62,7 @@ function showAppSite(plattform, name) {
                             onClick={() => window.open(json.Github[i])}
                         >GitHub</motion.button>
                         </div>
-                        <div style={{paddingLeft:"25px", paddingRight:"25px"}}>
+                        <div style={{padding:"25px"}}>
                         <motion.button
                             className="indexBtn"
                             whileHover={{ scale: 1.1 }}
@@ -71,7 +71,7 @@ function showAppSite(plattform, name) {
                             onClick={() => window.open(json.Download[i])}
                         >Download</motion.button>
                         </div>
-                        <div style={{paddingLeft:"25px", paddingRight:"25px"}}>
+                        <div style={{padding:"25px"}}>
                         <motion.button
                             className="btngreenDev"
                             whileHover={{ scale: 1.1 }}
@@ -83,7 +83,7 @@ function showAppSite(plattform, name) {
                     </div>
                 </div>
                 <div className="middle"> 
-                    <img className="clickable" onClick={() => window.open(json.Download[i])} src={json.Img[i]} />
+                    <img style={{maxHeight:"500px"}} className="clickable" onClick={() => window.open(json.Download[i])} src={json.Img[i]} />
                 </div>
                 {parse(json.Site[i])}
             </main>
