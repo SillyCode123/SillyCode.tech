@@ -1,17 +1,21 @@
 {
     "Name": [
-        
+        "BetterPy"
     ],
 
     "Img": [
-
+        ""
     ],
 
     "Github": [
-        
+        "https://github.com/SillyCode123/BetterPy"
     ],
 
     "Download": [
+        "https://github.com/SillyCode123/BetterPy/raw/main/output/BetterPy-SetupFiles/BPy_Setup.exe"
+    ],
 
+    "Site": [
+        ""
     ]
 }

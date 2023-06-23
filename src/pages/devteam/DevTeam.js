@@ -24,10 +24,7 @@ function DevTeam() {
           >
             Github
           </motion.button>
-        </div> 
-        <br/>
-        <div className="middle">
-          <motion.button
+        </div>    <motion.button
             className="devTeamBtn"
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
@@ -36,6 +33,9 @@ function DevTeam() {
           >
             Our Software
           </motion.button>
+        <br/>
+        <div className="middle">
+       
         </div>
         <br/>
         <div className="middle" style={{ fontSize: 40 }}>
