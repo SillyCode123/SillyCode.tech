@@ -5,14 +5,13 @@ import { motion } from "framer-motion";
 function Kindskopf() {
 
   const git = () => {
-    window.open("https://github.com/SillyGoose123");
+    window.open("https://github.com/Kindskopf123");
   };
 
   return (
     <>
      <MenuBar/>  
-
-      <main className="grid">
+      <main style={{paddingTop:"90px"}} className="grid">
         <motion.button
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.9 }}
@@ -62,19 +61,7 @@ function Kindskopf() {
           </motion.button>
         </div>
        <div className="middle">
-          <motion.button
-            className="devTeamBtn"
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.9 }}
-            style={{ fontSize: 20 }}
-            onClick={git}
-          >
-            Email
-          </motion.button>
-        </div>
-
-        <div>
-          <h1 className="middle">
+       <h1 className="middle">
             <motion.a
               className="overflow"
               whileHover={{ scale: 1.1 }}
@@ -89,8 +76,8 @@ function Kindskopf() {
             >
               Our Discord
             </motion.a>
-          </h1>
-        </div>
+        </h1>
+       </div>
 
         <br />
       </main>

@@ -24,7 +24,7 @@ function SillyGoose() {
     return (
       <>
         <MenuBar />
-        <main className="grid">
+        <main style={{paddingTop:"75px"}} className="grid">
           <motion.h1
             className="middle"
             style={{ color: "orange", fontSize: 60 }}
@@ -146,7 +146,7 @@ function SillyGoose() {
     return (
       <>
         <MenuBar />
-        <main className="grid">
+        <main style={{paddingTop:"90px"}}  className="grid">
           <motion.button
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
@@ -172,7 +172,7 @@ function SillyGoose() {
               Switch
             </motion.button>
           </div>
-          <motion.h1 className="" style={{ color: "Green", fontSize: 40 }}>
+          <motion.h1 style={{ color: "Green", fontSize: 40 }}>
             Languages
           </motion.h1>
 

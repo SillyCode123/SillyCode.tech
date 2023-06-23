@@ -1,1 +1,21 @@
-//TODO eintracken immer bild url und nameund url einríchten also /software/$(name)
+{
+    "Name": [
+        "BetterPy"
+    ],
+
+    "Img": [
+        "https://raw.githubusercontent.com/SillyCode123/BetterPy/main/BetterPy.png"
+    ],
+
+    "Github": [
+        "https://github.com/SillyCode123/BetterPy"
+    ],
+
+    "Download": [
+        "https://github.com/SillyCode123/BetterPy/raw/main/output/BetterPy-SetupFiles/BPy_Setup.exe"
+    ],
+
+    "Site": [
+        ""
+    ]
+}
