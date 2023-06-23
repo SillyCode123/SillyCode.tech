@@ -3,7 +3,7 @@ import React, {useEffect} from "react";
 import GoBack from "../componets/GoHome";
 import MenuBar from "../componets/MenuBar";
 import { isAndroid, isIOS, isMobile} from "react-device-detect";
-import addContent from "./contentCreator";
+import addContent,{addPopUp} from "./contentCreator";
 
 //vars
 var content = [];
@@ -34,10 +34,11 @@ function SoftPage() {
 
   useEffect(() => {
     if (refresh == 0) {
-      update()
+      update(refresh, setRefresh)
       setRefresh(refresh +1)
     }
   });
+
   if(!isMobile){
     //ANCHOR jsx for pc
     return (
@@ -59,6 +60,7 @@ function SoftPage() {
               <div>{filters[2]}</div>
           </form>
         </div>
+       <div id="pop"></div>
       </>
     )
   } else {
@@ -79,15 +81,8 @@ function SoftPage() {
 //ANCHOR Update
 function update() {
   content = [];
-  // witch platform
-  var plattform = "Desktop";
-  if(isAndroid){
-   plattform = "Android"
-  } else if(isIOS){
-    plattform = "Ios"
-  }
 
-  //get order
+  // get order
   var order = getOrder();
 
   //create content and create filter
@@ -138,6 +133,5 @@ function getOrder(){
       return [plattform,"Android","Desktop" ]
    }
 }
-
 
 export default SoftPage;

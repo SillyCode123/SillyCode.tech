@@ -1,1 +1,17 @@
-//TODO eintracken immer bild url und nameund url einríchten also /software/$(name)
+{
+    "Name": [
+        "NimmGameApp"
+    ],
+
+    "Img": [
+        "https://raw.githubusercontent.com/SillyGoose123/NimmGameApp/main/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png"
+    ],
+
+    "Github": [
+        "https://github.com/SillyGoose123/NimmGameApp/tree/main"
+    ],
+
+    "Download": [
+        "https://github.com/SillyGoose123/NimmGameApp/raw/main/app/release/NimmGame.apk"
+    ]
+}

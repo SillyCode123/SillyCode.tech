@@ -1,1 +1,17 @@
-//TODO eintracken immer bild url und nameund url einríchten also /software/$(name)
+{
+    "Name": [
+        
+    ],
+
+    "Img": [
+
+    ],
+
+    "Github": [
+        
+    ],
+
+    "Download": [
+
+    ]
+}
