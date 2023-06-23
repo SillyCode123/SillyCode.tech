@@ -83,7 +83,7 @@ function showAppSite(plattform, name) {
                     </div>
                 </div>
                 <div className="middle"> 
-                    <img style={{maxHeight:"500px"}} className="clickable" onClick={() => window.open(json.Download[i])} src={json.Img[i]} />
+                    <img style={{maxHeight:"500px", maxWidth:"300px"}} className="clickable" onClick={() => window.open(json.Download[i])} src={json.Img[i]} />
                 </div>
                 {parse(json.Site[i])}
             </main>
