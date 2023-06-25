@@ -7,7 +7,7 @@ import MenuBar from "./../componets/MenuBar";
 
 function addContent(platform){
     var cur = getJson(platform);
-    var ret = <><h1 className="middle">{platform}</h1><span className="middle">No content availible.</span></>;
+    var ret = <><h1 className="middle">{platform}</h1><span className="middle">No content available.</span></>;
     
     if(cur.Name.length > 0){
         ret = <><h1 className="middle">{platform}</h1></>;
