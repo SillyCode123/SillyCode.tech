@@ -14,7 +14,6 @@ function Index() {
         <div style={{position: "absolute", left:"45%" , top: "50px"}}>
           <section>
             <h1>Functions</h1>
-
             <motion.button
               className="devTeamBtn"
               whileHover={{ scale: 1.1 }}
