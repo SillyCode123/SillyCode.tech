@@ -119,7 +119,7 @@ function NimmGame() {
             </motion.button>
           </div>
         </div>
-        <br />
+        
         <span></span>
         <div className="grid-around-space">
           <div className="middle">
