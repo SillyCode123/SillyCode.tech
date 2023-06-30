@@ -61,10 +61,7 @@ function Kindskopf() {
           </motion.button>
         </div>
        <div className="middle">
-        </div>
-
-        <div>
-          <h1 className="middle">
+       <h1 className="middle">
             <motion.a
               className="overflow"
               whileHover={{ scale: 1.1 }}
@@ -79,8 +76,8 @@ function Kindskopf() {
             >
               Our Discord
             </motion.a>
-          </h1>
-        </div>
+        </h1>
+       </div>
 
         <br />
       </main>
